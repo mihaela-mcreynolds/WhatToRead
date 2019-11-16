@@ -1,8 +1,4 @@
 <!DOCTYPE html>
-<?php
-include('dbh.inc.php')
-include('register.inc.php')
-?>
 <html lang="en">
 <head>
   <title>What To Read</title>
@@ -11,7 +7,6 @@ include('register.inc.php')
     <meta name="description" content="What To Read-group project for Internet Software Development class at PSTCC. Partner: Annette Farah">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<script src="https://kit.fontawesome.com/64d06c75d0.js"></script>
 	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 	<script src="prefix-free.js" type="text/javascript"></script>
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
@@ -21,8 +16,13 @@ include('register.inc.php')
   <style type="text/css"> @import url(wtr.css)</style>
 </head>
 <body>
-<div class="container-fluid" style="padding: 0; height: 100%;">
 
+<?php require register.php ?>
+<?php
+
+?>
+
+<div class="container-fluid" style="padding: 0; height: 100%;">
 <!-- Header -->
 <div class="page-header" style="display: flex; padding: 0; margin: 0;">
   <div class="row" style="flex: 1; vertical-align: top; padding: 0 !important;">
@@ -59,19 +59,19 @@ include('register.inc.php')
 
 	<!-- Top Right corner -->
 	<div class="col-xl-4 col-lg-4 col-md-5 col-sm-5 col-xs-5" style="background-color: white; padding: 2.3%;">
-	  <!-- Log in -->
-		<form action = "includes/login.inc.php" method = "post">
+<!----------------------------------------------------- LOG IN FORM  ------------------------------------------------------------>
+		<form action = "login.php" method = "post">
 			<div class="form-group">
 				<label for="exampleInputEmail1" style="color: #324519;">Email address
 				</label>
-				<input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email@email.com">
+				<input type="email" class="form-control" name="logemail" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email@email.com">
 				<small id="emailHelp" class="form-text text-muted" style="color: #8a0e0b;">We'll never share your email with anyone else.
 				</small>
 			</div>
 			<div class="form-group">
 				<label for="exampleInputPassword1" style="color: #324519;">Password
 				</label>
-				<input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password...">
+				<input type="password" class="form-control" name="logpwd" id="exampleInputPassword1" placeholder="Password...">
 			</div>
 			<div class="form-group form-check">
 				<input type="checkbox" class="form-check-input" id="exampleCheck1">
@@ -102,7 +102,8 @@ include('register.inc.php')
 									</div>
 								</div>
 								<div class="modal-body">
-									<form class="pb-modalreglog-form-reg" method = "post" action = "includes/register.inc.php">
+    <!--------------------------------------------- REGISTRATION FORM -------------------------------------------------->
+									<form class="pb-modalreglog-form-reg" method = "post" action = "register.php">
 										<div class="form-group">
 											<div id="pb-modalreglog-progressbar">
 											</div>
@@ -115,7 +116,7 @@ include('register.inc.php')
 													<span class="glyphicon glyphicon-user">
 													</span>
 												</span>
-												<input type="text" class="form-control" id="inputfname" placeholder="Jane" name = "fname">
+												<input type="text" class="form-control" id="fname" placeholder="Jane" name = "fname">
 											</div>
 										</div>
                     <div class="form-group">
@@ -126,7 +127,7 @@ include('register.inc.php')
 													<span class="glyphicon glyphicon-user">
 													</span>
 												</span>
-												<input type="text" class="form-control" id="inputlname" placeholder="Doe" name = "lname">
+												<input type="text" class="form-control" id="lname" placeholder="Doe" name = "lname">
 											</div>
 										</div>
 										<div class="form-group">
@@ -137,7 +138,7 @@ include('register.inc.php')
 													<span class="glyphicon glyphicon-user">
 													</span>
 												</span>
-												<input type="email" class="form-control" id="inputEmail" placeholder="Email@email.com" name = "email">
+												<input type="email" class="form-control" id="email" placeholder="Email@email.com" name = "email">
 												<small id="emailHelp" class="form-text text-muted" style="color: #8a0e0b;">We'll never share your email with anyone else.
 												</small>
 											</div>
@@ -195,31 +196,32 @@ include('register.inc.php')
 
  <!-- Page body -->
 
- <div class="container">
+ <div class="container" onload = "startQuiz()">
 	<div class="container text-center" style="padding:20px; float:left;">
 		<h4> What to read next? Take our short quiz to find out! </h4><br><hr>
 		<h5 class="display-5" style="color: #8a0e0b;">Choose one:
 		</h5><hr>
-		<div class="border border-warning">
+		<div class="border border-warning" id = "quiz">
 		<!-- Quiz options in a grid of pictures -->
 			<div class="row">
 				<div class="column">
-					<img src="05before-and-after-slide-T6H2-superJumbo.jpg" style="height: 300px; width: 200px;">
-					<img src="41iers+HLSL._SX326_BO1,204,203,200_.jpg" style="height: 300px; width: 200px;">
+					<img id = "martian" src="05before-and-after-slide-T6H2-superJumbo.jpg" style="height: 300px; width: 200px;">
+					<img id = "gatsby" src="41iers+HLSL._SX326_BO1,204,203,200_.jpg" style="height: 300px; width: 200px;">
 				</div>
 				<div class="column">
-					<img src="41UY3xTBq3L._SX322_BO1,204,203,200_.jpg" style="height: 300px; width: 200px;">
-					<img src="download (1).jpg" style="height: 300px; width: 200px;">
+					<img id = "homegoing" src="41UY3xTBq3L._SX322_BO1,204,203,200_.jpg" style="height: 300px; width: 200px;">
+					<img id = "hp1" src="download (1).jpg" style="height: 300px; width: 200px;">
 				</div>
 				<div class="column">
-					<img src="Irwin-Sherman-Book-Cover.jpg" style="height: 300px; width: 200px;">
-					<img src="images (1).jpg" style="height: 300px; width: 200px;">
+					<img id= "malaria" src="Irwin-Sherman-Book-Cover.jpg" style="height: 300px; width: 200px;">
+					<img id = "dracula" src="images (1).jpg" style="height: 300px; width: 200px;">
 				</div>
 				<div class="column">
-					<img src="setForLife.jpg" style="height: 300px; width: 200px;">
-					<img src="Mothergoose.jpg" style="height: 300px; width: 200px;">
+					<img id = "set" src="setForLife.jpg" style="height: 300px; width: 200px;">
+					<img id = "mothergoose" src="Mothergoose.jpg" style="height: 300px; width: 200px;">
 				</div>
 			</div>
+      <button type = "submit" id = "quizSubmit">Submit</button>
 		</div>
 	</div>
   </div>
@@ -257,66 +259,33 @@ include('register.inc.php')
   </div>
 
  <script>
-    $(function () {
-        var progress = $("#pb-modalreglog-progressbar").shieldProgressBar({
-            value: 0
-        }).swidget();
+   const quizContainer = document.getElementById("quiz");
+   const submitButton = document.getElementById("quizSubmit");
 
-        $('#inputEmail').change(function () {
-            if ($('#inputEmail').val().length > 1) {
-                progress.value(progress.value() + 15);
-            } else {
-                progress.value(progress.value() - 15);
-            }
-        });
+   function startQuiz(questions, quizContainer, submitButton) {
+     function showQuestions(questions, quizContainer){}
+      submitButton.hide();
+     }
+     function sowResult(questions, quizContainer){
 
-        $('#inputPws').change(function () {
-            if ($('#inputPws').val().length > 1) {
-                progress.value(progress.value() + 15);
-            } else {
-                progress.value(progress.value() - 15);
-            }
-        });
+     }
 
-        $('#inputConfirmPws').change(function () {
-            if ($('#inputConfirmPws').val().length > 1) {
-                progress.value(progress.value() + 15);
-            } else {
-                progress.value(progress.value() - 15);
-            }
-        });
+     showQuestions(questions, quizContainer);
 
-        $('#countries').change(function () {
-            if ($('#countries').val().length > 1) {
-                progress.value(progress.value() + 15);
-            } else {
-                progress.value(progress.value() - 15);
-            }
-        });
+     submitButton.onclick = function(){
+       showResults(questions, quizContainer)
+     }
+   }
 
-        $('#age').change(function () {
-            if ($('#age').val().length > 1) {
-                progress.value(progress.value() + 15);
-            } else {
-                progress.value(progress.value() - 15);
-            }
-        });
+   var myQuestions = [
+    {
+      answers: {
+        a:
+      }
+    }
+   ]
 
-        $('#ch').change(function () {
-            if ($('input[name="chs"]:checked').length > 0) {
-                progress.value(progress.value() + 25);
-            } else {
-                progress.value(progress.value() - 25);
-            }
-        });
-
-        $("#age").shieldMaskedTextBox({
-            enabled: true,
-            mask: "00/00/0000",
-            value: "19/03/1032"
-        });
-    })
-  script>
+</script>
 
 </body>
 </html>
