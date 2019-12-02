@@ -1,0 +1,53 @@
+/*
+	Annette Emily Farah
+	November 21, 2019
+	CITC 2375 - Internet Software Development
+	Instructor: Dr. Puretskiy
+	
+	Class Project: WhatToRead
+	Partners: Mihaela McReynolds & Annette Emily Farah
+	wtrquiz.css
+*/
+
+/* Styles for Book Image Gallery -------------------------- */
+.row .column a img	{	height: 300px;
+						width:	200px;	}
+						
+.row .column a:hover 		{ 	opacity: 0.3;}	
+
+
+.textandtable	{	text-align: center;	}
+
+.bookinfo				{	display: inline-block;
+							width: 85%;	
+							background-color: #F2F2F2;	
+							background-image: linear-gradient(to bottom, rgba(118,60,48,0), rgba(118,60,48,.8));
+							border-radius: 15px 50px 30px 5px;
+							padding: 0px 40px 0px 40px;	
+							margin: 10px 70px 20px 100px;	
+							text-align: left;
+							font-size: 14px; }
+							
+.bookinfo a				{	text-decoration: none; color: #FEE3A8;	}							
+.bookinfo a:link 		{ 	color: #FEE3A8; }  	/* light yellow */
+.bookinfo a:visited 	{ 	color: #FFFFFF; }	/* white  */
+.bookinfo a:hover 		{ 	color: #00ff00; }	/* bright green */
+
+.floatcover  	{	float:left;
+					margin: 20px 60px 20px 60px;						
+					padding: 0 8px;
+					border: none;
+					width: 25%;	}
+					
+.floatcover p	{	padding: 0 0 0 15px;	
+					margin: 0 0 10px 0px;	
+					font-size: 120%;
+					font-weight: bold; 
+					letter-spacing: 1px;
+					text-align: center;
+					font-style: italic;	
+					color: #000000;	}
+					
+.floatcover img	{	height: 600px;	width: 400px; }					
+.floatcover a	{	color: #0000ff;	}
+							

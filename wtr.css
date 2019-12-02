@@ -6,7 +6,7 @@
 */
 /*  Mihaela McReynolds
 	Annette Emily Farah
-	
+
 	October 17, 2019
 	CITC-2375-PC7 - Internet Software Development
 
@@ -17,7 +17,7 @@
 /* Author: Annette Emily Farah */
 
 /* ------------------------ Search Styles */
-.floatleft { 
+.floatleft {
 	float: left;
 	width: 33%;
 	margin: 0 auto;
@@ -30,7 +30,6 @@
 
 .btnAdd {
 	margin-top: 50px;
-	width: 250px;
 }
 
 /* ------------------------ About Styles */
@@ -44,7 +43,7 @@
 	text-align: justify;
 }
 
-.floatsocialmedia { 
+.floatsocialmedia {
 	float: right;
 	width: 30%;
 	margin: 60px auto;
@@ -94,7 +93,7 @@
 
 h4 {
     color: #324519;
-    font-family: Open Sans, "Arial", sanserif; 
+    font-family: Open Sans, "Arial", sanserif;
 }
 
 /* Images */
@@ -114,7 +113,7 @@ h4 {
     background-color: #692B0A;
     background-image: none;
     color: #FFFFFF;
-    font-family: Open Sans, "Arial", sanserif; 
+    font-family: Open Sans, "Arial", sanserif;
 	font-size: 115%;
 }
 .navbar-collapse .navbar-brand {
@@ -224,10 +223,10 @@ p .card .card-img-top .card-img-overlay .card-text {
 	height: 100%;
 	margin: 0;
 	padding: 0;
-	font-family: Open Sans, "Arial", sanserif; 
+	font-family: Open Sans, "Arial", sanserif;
 	font-size: 1.5em;
 	text-align: center;
-	
+
 }
 
 /* Search bar */
@@ -263,8 +262,8 @@ margin: 20px;
 }
 
 p .text-center {
-	color: #FFFFFF; 
-	font-family: Open Sans, Arial, sanserif; 
+	color: #FFFFFF;
+	font-family: Open Sans, Arial, sanserif;
 	font-size: 115%;
 }
 
@@ -274,20 +273,22 @@ p .text-center {
 .carousel-inner .carousel-item-next,
 .carousel-inner .carousel-item-prev {
   display: flex;
+	padding: 5%;
+	height: 120% !important;
 }
 
 .carousel-inner .carousel-item-right.active,
 .carousel-inner .carousel-item-next {
-  transform: translateX(25%);
+  transform: translateX(20%);
 }
 
-.carousel-inner .carousel-item-left.active, 
+.carousel-inner .carousel-item-left.active,
 .carousel-inner .carousel-item-prev {
   transform: translateX(-25%);
 }
-  
+
 .carousel-inner .carousel-item-right,
-.carousel-inner .carousel-item-left{ 
+.carousel-inner .carousel-item-left{
   transform: translateX(0);
-  
+
 }

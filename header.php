@@ -36,7 +36,7 @@
       			<div class="collapse navbar-collapse" id="navbarCollapse">
       				<ul class="nav navbar-nav" style="display: flex; float: none; display: inline-block; width: 100%; background-color: white; color: #324519;">
       					<li class="nav-item" >
-      						<a class="nav-link" href="main.html">Home</a>
+      						<a class="nav-link" href="index.php">Home</a>
       					</li>
       					<li class="nav-item" >
       						<a class="nav-link" href="browse.html">Browse</a>
